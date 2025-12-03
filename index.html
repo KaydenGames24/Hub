@@ -52,17 +52,17 @@
 
   .grid {
     display: grid;
-    grid-template-columns: repeat(2, 140px);
-    grid-template-rows: repeat(2, 54px);
-    gap: 20px;
+    grid-template-columns: repeat(2, 180px);
+    grid-template-rows: repeat(3, 70px);
+    gap: 24px;
   }
 
   .grid button {
-    padding: 0 8px;
-    height: 54px;
-    font-size: 1rem;
+    padding: 0 10px;
+    height: 70px;
+    font-size: 1.15rem;
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     background: var(--button-bg);
     color: var(--text-color);
     cursor: pointer;
@@ -103,13 +103,15 @@
 <body>
   <div class="container">
     <div class="image-area" id="image-area">
-      <img src="https://imgs.search.brave.com/-1bVM2xOqpWrielF6CcGZrTdShKrXUiGo9lGG31KC3I/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9wcmV2/aWV3LnJlZGQuaXQv/aXMtYW55b25lLXJl/c2VsbGluZy10aGUt/djEtYW5kLXYyLXBs/dXNoaWVzLXYwLXR2/Y3hibDU0bWFhYzEu/cG5nP3dpZHRoPTU0/MCZmb3JtYXQ9cG5n/JmF1dG89d2VicCZz/PTA5ZDlkMzlmMWI3/YTI1N2I1OWM2ZWVk/ODEzYmZkZDZmYTY3/NTY2YjI" alt="V1 Plushie"> -->
+      <img src="https://imgs.search.brave.com/-1bVM2xOqpWrielF6CcGZrTdShKrXUiGo9lGG31KC3I/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9wcmV2/aWV3LnJlZGQuaXQv/aXMtYW55b25lLXJl/c2VsbGluZy10aGUt/djEtYW5kLXYyLXBs/dXN[...]
     </div>
     <div class="grid">
       <button onclick="location.href='https://kaydengames24.github.io/just-a-platformer2/'">Just A Platformer Fork</button>
       <button onclick="location.href='https://kaydengames24.github.io/matrix-solver/'">My Matrix Solver</button>
       <button onclick="location.href='https://kaydengames24.github.io/MultiplicationTableGenerator/'">Multiplication Table Generator</button>
       <button onclick="location.href='https://www.youtube.com/@kaydengames24'">My Youtube</button>
+      <!-- New button, bottom row, takes up one column -->
+      <button style="grid-column: span 2;" onclick="location.href='https://drive.google.com/drive/folders/1ci_N5npP1X6j61aJg4V3mdQhgQkCG_BO?usp=sharing'">My Google Drive Folders</button>
     </div>
     <button class="toggle-dark" id="themeToggle">Toggle Dark Mode</button>
   </div>
