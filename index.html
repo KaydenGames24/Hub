@@ -50,14 +50,26 @@
     display: block;
   }
 
-  .grid {
+  /* Button grid restructured - Now a single col for mobile, 2 cols for desktop */
+  .button-grid {
     display: grid;
-    grid-template-columns: repeat(2, 180px);
-    grid-template-rows: repeat(3, 70px);
-    gap: 24px;
+    grid-template-columns: 1fr; /* 1 column by default (mobile) */
+    gap: 20px;
+    width: 100%;
+    max-width: 380px;
+    margin-bottom: 10px;
+  }
+  @media (min-width: 500px) {
+    .button-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    /* Full width row for google drive on desktop */
+    .button-grid .full-width {
+      grid-column: span 2;
+    }
   }
 
-  .grid button {
+  .button-grid button {
     padding: 0 10px;
     height: 70px;
     font-size: 1.15rem;
@@ -68,9 +80,11 @@
     cursor: pointer;
     transition: background 0.2s;
     box-shadow: 0 2px 6px #0001;
+    width: 100%;
+    box-sizing: border-box;
   }
 
-  .grid button:hover {
+  .button-grid button:hover {
     background: var(--button-hover-bg);
   }
 
@@ -103,15 +117,15 @@
 <body>
   <div class="container">
     <div class="image-area" id="image-area">
-      <img src="https://imgs.search.brave.com/-1bVM2xOqpWrielF6CcGZrTdShKrXUiGo9lGG31KC3I/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9wcmV2/aWV3LnJlZGQuaXQv/aXMtYW55b25lLXJl/c2VsbGluZy10aGUt/djEtYW5kLXYyLXBs/dXN[...]
+      <img src="https://imgs.search.brave.com/-1bVM2xOqpWrielF6CcGZrTdShKrXUiGo9lGG31KC3I/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9wcmV2/aWV3LnJlZGQuaXQv/aXMtYW55b25lLXJl/c2VsbGluZy10aGUt/djEtYW5kLXYyLXBs/dXN[...]">
     </div>
-    <div class="grid">
+    <!-- MOVED buttons outside .grid, use .button-grid -->
+    <div class="button-grid">
       <button onclick="location.href='https://kaydengames24.github.io/just-a-platformer2/'">Just A Platformer Fork</button>
       <button onclick="location.href='https://kaydengames24.github.io/matrix-solver/'">My Matrix Solver</button>
       <button onclick="location.href='https://kaydengames24.github.io/MultiplicationTableGenerator/'">Multiplication Table Generator</button>
       <button onclick="location.href='https://www.youtube.com/@kaydengames24'">My Youtube</button>
-      <!-- New button, bottom row, takes up one column -->
-      <button style="grid-column: span 2;" onclick="location.href='https://drive.google.com/drive/folders/1ci_N5npP1X6j61aJg4V3mdQhgQkCG_BO?usp=sharing'">My Google Drive Folders</button>
+      <button class="full-width" onclick="location.href='https://drive.google.com/drive/folders/1ci_N5npP1X6j61aJg4V3mdQhgQkCG_BO?usp=sharing'">My Google Drive Folders</button>
     </div>
     <button class="toggle-dark" id="themeToggle">Toggle Dark Mode</button>
   </div>
